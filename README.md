@@ -1,6 +1,6 @@
 # Website Portfolio
 
-Eight English-language website demos by [Benallal Malek](https://github.com/Benallal-Malek). Each project has its own page, styles, and assets and runs without a build step.
+Nine English-language website demos by [Benallal Malek](https://github.com/Benallal-Malek). Each project has its own page, styles, and assets and runs without a build step.
 
 [Open the live portfolio](https://benallal-malek.github.io/website-portfolio/)
 
@@ -14,6 +14,7 @@ Eight English-language website demos by [Benallal Malek](https://github.com/Bena
 | Fite Lite | Fitness studio landing page with programs and a testimonials carousel | [Open demo](https://benallal-malek.github.io/website-portfolio/projects/fite-lite/) | [Files](projects/fite-lite/) |
 | Shopkart | Headphone catalog with search, sorting, filters, and favorites | [Open demo](https://benallal-malek.github.io/website-portfolio/projects/head-phones/) | [Files](projects/head-phones/) |
 | Inner Balance | Therapist landing page with service descriptions and a consultation form | [Open demo](https://benallal-malek.github.io/website-portfolio/projects/iner-balance/) | [Files](projects/iner-balance/) |
+| Vasella | Artisan vase shop with collection filters, favorites, and a demo cart | [Open demo](https://benallal-malek.github.io/website-portfolio/projects/vasella/) | [WordPress theme](https://github.com/Benallal-Malek/vasella-woocommerce-theme) |
 
 ## Run locally
 

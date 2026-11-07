@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vasella makes handcrafted vases for modern interiors, with distinctive shapes and natural materials.">
+  <title>Vasella | Artisan Vases</title>
+  <link rel="stylesheet" href="assets/css/storefront.css">
+  <script defer src="assets/js/storefront.js"></script>
+  <script defer src="assets/js/demo.js"></script>
+</head>
+<body>
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-vase" viewBox="0 0 25 41"><path d="M9.3 3.2c0-.8 1.2-1.4 3.3-1.4s3.3.6 3.3 1.4c0 1.4-1.2 2.4-1.2 4.7 0 4.9 5.7 8.4 5.7 17.5 0 7.2-3.2 13.9-7.8 13.9s-7.9-6.7-7.9-13.9c0-9.1 5.7-12.6 5.7-17.5 0-2.3-1.1-3.3-1.1-4.7Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="6.4"/><path d="m15.5 15.5 4.8 4.8"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.3 5.9a4.6 4.6 0 0 0-6.5 0L12 7.7l-1.8-1.8a4.6 4.6 0 0 0-6.5 6.5l8.3 8.3 8.3-8.3a4.6 4.6 0 0 0 0-6.5Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M4.3 8.7h15.4l1.2 11.5a1 1 0 0 1-1 1.1H4.1a1 1 0 0 1-1-1.1L4.3 8.7Z"/><path d="M8.4 11.5V6.9a3.6 3.6 0 1 1 7.2 0v4.6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M21 3c-3.1 1.8-6.5.7-10.1 2.7-4.7 2.6-5.9 7.4-2.7 10.1 3 2.4 8.1.4 9.7-3.1C19 10.2 19 6 21 3Z"/><path d="M4 20c2.5-4.1 6.2-7.6 11-9.5"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M9.5 13.4V5.1a1.5 1.5 0 0 1 3 0v5.1-7a1.4 1.4 0 0 1 2.8 0v7-5a1.4 1.4 0 0 1 2.8 0v5.7-2.8a1.4 1.4 0 0 1 2.8 0v6.1a7.1 7.1 0 0 1-14 1.5l-2-3.9a1.4 1.4 0 0 1 2.4-1.4l2.2 3Z"/></symbol>
+  <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2.1-2.9-3.4-4.1-5.4-4.1a4.1 4.1 0 1 0 0 8.2c2 0 3.3-1.2 5.4-4.1Zm0 0c2.1-2.9 3.4-4.1 5.4-4.1a4.1 4.1 0 0 1 0 8.2c-2 0-3.3-1.2-5.4-4.1Z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="m6.3 3.8 2.3-.5 2 4.8-2.1 1.7a13.4 13.4 0 0 0 5.7 5.7l1.7-2.1 4.8 2-.5 2.3a3.2 3.2 0 0 1-3.5 2.4A17.1 17.1 0 0 1 3.9 7.3a3.2 3.2 0 0 1 2.4-3.5Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.2" y="5" width="17.6" height="14" rx="1.7"/><path d="m4.2 6.5 7.8 6.2 7.8-6.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5.1-7 10.9-7 10.9S5 15.1 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+</svg>
+<a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="index.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-vase"></use></svg><span>VASELLA</span></a>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+      <ul>
+        <li>
+          <details class="catalog-menu">
+            <summary>Catalog <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></summary>
+            <ul class="nav-submenu">
+              <li><a href="#catalog" data-catalog="">All vases</a></li>
+            <li><a href="#catalog" data-catalog="keramika">Ceramic</a></li>
+            <li><a href="#catalog" data-catalog="skulpturnye">Sculptural</a></li>
+            <li><a href="#catalog" data-catalog="minimalizm">Minimalist</a></li>
+            <li><a href="#catalog" data-catalog="fakturnye">Textured</a></li>
+            <li><a href="#catalog" data-catalog="tsvetnoe-steklo">Colored glass</a></li>
+
+            </ul>
+          </details>
+        </li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#new">New arrivals</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" type="button" data-open-dialog="site-search" aria-haspopup="dialog" aria-label="Search"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg></button>
+      <button class="icon-button" type="button" data-open-dialog="site-favorites" aria-haspopup="dialog" aria-label="Favorites"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-heart"></use></svg></button>
+      <button class="icon-button" type="button" data-open-dialog="demo-cart" aria-haspopup="dialog" aria-label="Cart"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bag"></use></svg><span class="cart-count" data-cart-count aria-hidden="true">0</span></button>
+      <button class="icon-button menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1">
+  <section class="hero hero--wide" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1 class="display-title" id="hero-title">Artisan vases
+for modern
+interiors</h1>
+        <p>Distinctive shapes, natural materials,
+and craftsmanship in every detail</p>
+        <div class="hero-actions">
+          <a class="button-link" href="#catalog" data-catalog="">Shop the collection <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+          <a class="button-link button-link--outline" href="#about">About</a>
+        </div>
+      </div>
+    </div>
+    <picture>
+      <source media="(max-width: 570px)" srcset="assets/images/hero-mobile.webp">
+      <img class="hero-media" src="assets/images/hero.webp" alt="" fetchpriority="high" decoding="async">
+    </picture>
+  </section>
+
+  <section class="wrap collection-grid" id="collections" aria-labelledby="collections-title">
+    <div class="section-copy">
+      <p class="eyebrow">Collections</p>
+      <h2 class="section-title" id="collections-title">Find
+your style</h2>
+      <p>Artisan vases in a range of styles to suit your space</p>
+    </div>
+    <a class="collection-card" href="#catalog" data-catalog="keramika">
+      <img src="assets/images/category-ceramic.webp" alt="" class="" loading="lazy" decoding="async">
+      <span class="collection-card__label">Ceramic <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+    <a class="collection-card" href="#catalog" data-catalog="skulpturnye">
+      <img src="assets/images/category-sculpture.webp" alt="" class="" loading="lazy" decoding="async">
+      <span class="collection-card__label">Sculptural <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+    <a class="collection-card" href="#catalog" data-catalog="minimalizm">
+      <img src="assets/images/category-minimal.webp" alt="" class="" loading="lazy" decoding="async">
+      <span class="collection-card__label">Minimalist <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+    <a class="collection-card" href="#catalog" data-catalog="fakturnye">
+      <img src="assets/images/category-texture.webp" alt="" class="" loading="lazy" decoding="async">
+      <span class="collection-card__label">Textured <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+    <a class="collection-card" href="#catalog" data-catalog="tsvetnoe-steklo">
+      <img src="assets/images/category-glass.webp" alt="" class="" loading="lazy" decoding="async">
+      <span class="collection-card__label">Colored glass <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></span>
+    </a>
+  </section>
+
+  <section class="wrap featured" id="catalog" aria-labelledby="featured-title">
+    <div class="section-head">
+      <h2 class="section-title" id="featured-title">Bestsellers</h2>
+      <a class="text-link" href="#catalog" data-catalog="">View all <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+    </div>
+    <div class="product-grid" data-home-products></div>
+    <noscript><p>Enable JavaScript to browse the demo catalog.</p></noscript>
+  </section>
+
+  <section class="craft" id="craft" aria-labelledby="craft-title">
+    <div class="craft__left"><img src="assets/images/craft-ceramic.webp" alt="" class="" loading="lazy" decoding="async"></div>
+    <div class="section-copy craft__copy">
+      <p class="eyebrow">Craft and materials</p>
+      <h2 class="section-title" id="craft-title">The art of form
+in natural materials</h2>
+      <p>We make each vase by hand, bringing traditional ceramic techniques into contemporary design</p>
+      <a class="button-link button-link--outline" href="#about">Learn more <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+    </div>
+    <div class="craft__right"><img src="assets/images/craft-clay.webp" alt="" class="" loading="lazy" decoding="async"></div>
+  </section>
+
+  <section class="wrap new-section" id="new" aria-labelledby="new-title">
+    <div class="section-copy new-section__copy">
+      <p class="eyebrow">New arrivals</p>
+      <h2 class="section-title" id="new-title">New
+collection</h2>
+      <p>Discover new shapes, textures, and colors for your home</p>
+      <a class="button-link button-link--outline" href="#catalog" data-catalog="new">Explore the collection <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a>
+    </div>
+    <div class="new-photo new-photo--main"><img src="assets/images/new-main.webp" alt="" class="" loading="lazy" decoding="async"></div>
+    <div class="new-photo new-photo--top"><img src="assets/images/new-olive.webp" alt="" class="" loading="lazy" decoding="async"></div>
+    <div class="new-photo new-photo--bottom"><img src="assets/images/new-speckle.webp" alt="" class="" loading="lazy" decoding="async"></div>
+    <div class="new-photo new-photo--tall"><img src="assets/images/new-amber.webp" alt="" class="" loading="lazy" decoding="async"></div>
+  </section>
+
+  <section class="wrap about" id="about" aria-labelledby="about-title">
+    <div class="section-copy about__copy">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title" id="about-title">More than vases</h2>
+      <p>At Vasella, we design with respect for our materials and create pieces that give a room character.</p>
+    </div>
+    <div class="about__value">
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-leaf"></use></svg>
+      <h3>Natural materials</h3>
+      <p>Ceramic, stone, and glass</p>
+    </div>
+    <div class="about__value">
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-hand"></use></svg>
+      <h3>Made by hand</h3>
+      <p>An artisan makes and inspects every vase</p>
+    </div>
+    <div class="about__value">
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-infinity"></use></svg>
+      <h3>Timeless design</h3>
+      <p>Contemporary pieces you can live with for years</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="contacts">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="wordmark" href="index.html"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-vase"></use></svg><span>VASELLA</span></a>
+      <p>Artisan vases
+for modern interiors</p>
+    </div>
+    <div>
+      <h2>Catalog</h2>
+      <ul class="footer-links">
+        <li><a href="#catalog" data-catalog="">All vases</a></li>
+        <li><a href="#collections">Shop by style</a></li>
+        <li><a href="#catalog" data-catalog="new">New arrivals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Collections</h2>
+      <ul class="footer-links">
+            <li><a href="#catalog" data-catalog="keramika">Ceramic</a></li>
+            <li><a href="#catalog" data-catalog="skulpturnye">Sculptural</a></li>
+            <li><a href="#catalog" data-catalog="minimalizm">Minimalist</a></li>
+            <li><a href="#catalog" data-catalog="fakturnye">Textured</a></li>
+            <li><a href="#catalog" data-catalog="tsvetnoe-steklo">Colored glass</a></li>
+
+      </ul>
+    </div>
+    <div>
+      <h2>About</h2>
+      <ul class="footer-links">
+        <li><a href="#about">Our story</a></li>
+        <li><a href="#craft">Craft and materials</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg> <span>hello@vasella.example</span></li>
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg> <span>Moscow, Russia</span></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h2>Notes from Vasella</h2>
+      <p>New arrivals, special offers, and interior ideas in your inbox</p>
+      <form class="newsletter-form" id="demo-newsletter">
+        <label for="newsletter-email" class="screen-reader-text">Email</label>
+        <input type="email" id="newsletter-email" autocomplete="email" placeholder="Your email address" required>
+        <button class="icon-button" type="submit" aria-label="Try the newsletter form"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
+      </form>
+      <p class="newsletter-note" role="status" data-newsletter-message></p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="site-dialog" id="site-search" aria-labelledby="site-search-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="site-search-title">Search</h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close search"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <form class="search-form" id="demo-search" role="search">
+    <label class="screen-reader-text" for="demo-search-input">Search by name</label>
+    <input type="search" id="demo-search-input" placeholder="For example, Olive" required autofocus>
+    <button class="button-link" type="submit">Search</button>
+  </form>
+</dialog>
+
+<dialog class="site-dialog site-dialog--drawer" id="site-favorites" aria-labelledby="site-favorites-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="site-favorites-title">Favorites</h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close favorites"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <p data-favorites-empty>Save the vases you like to see them here.</p>
+  <ul class="saved-list" data-favorites-list></ul>
+</dialog>
+
+<dialog class="site-dialog site-dialog--wide" id="demo-catalog" aria-labelledby="demo-catalog-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="demo-catalog-title">Vase catalog</h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close catalog"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <div class="filter-row">
+    <label>Search <input type="search" id="catalog-query" placeholder="Name or material"></label>
+    <label>Collection
+      <select id="catalog-collection">
+        <option value="">All collections</option>
+        <option value="new">New arrivals</option>
+        <option value="keramika">Ceramic</option>
+        <option value="skulpturnye">Sculptural</option>
+        <option value="minimalizm">Minimalist</option>
+        <option value="fakturnye">Textured</option>
+        <option value="tsvetnoe-steklo">Colored glass</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="catalog-sort">
+        <option value="default">Default order</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+      </select>
+    </label>
+  </div>
+  <p data-catalog-count role="status"></p>
+  <div class="product-grid dialog-products" data-catalog-products></div>
+  <p class="screen-reader-text" role="status" data-dialog-status></p>
+</dialog>
+
+<dialog class="site-dialog site-dialog--wide" id="demo-product" aria-labelledby="demo-product-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="demo-product-title"></h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close product details"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <div class="demo-detail">
+    <img data-detail-image alt="">
+    <div>
+      <p data-detail-description></p>
+      <p data-detail-material></p>
+      <p class="product-card__price" data-detail-price></p>
+      <button class="button-link" type="button" data-add=""><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bag"></use></svg> <span>Add to cart</span></button>
+    </div>
+  </div>
+  <p class="screen-reader-text" role="status" data-dialog-status></p>
+</dialog>
+
+<dialog class="site-dialog site-dialog--drawer" id="demo-cart" aria-labelledby="demo-cart-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="demo-cart-title">Cart</h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close cart"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <p data-cart-empty>Your cart is empty.</p>
+  <ul class="cart-list" data-cart-items></ul>
+  <div data-cart-summary hidden>
+    <div class="drawer-total"><span>Total</span><strong data-cart-total>RUB 0</strong></div>
+    <button class="button-link" type="button" data-demo-checkout>Checkout <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
+  </div>
+</dialog>
+
+<dialog class="site-dialog" id="demo-checkout" aria-labelledby="demo-checkout-title">
+  <div class="dialog-heading">
+    <h2 class="dialog-title" id="demo-checkout-title">Demo checkout</h2>
+    <button class="icon-button" type="button" data-close-dialog aria-label="Close checkout"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+  </div>
+  <div data-checkout-review>
+    <p>Review your items before completing the demo order in your browser.</p>
+    <ul data-checkout-items></ul>
+    <div class="drawer-total"><span>Total</span><strong data-checkout-total></strong></div>
+    <button class="button-link" type="button" data-confirm-demo>Place demo order <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></button>
+  </div>
+  <div data-checkout-confirmation hidden>
+    <p>Demo order complete. Your cart is empty.</p>
+    <p><a class="text-link" href="#catalog" data-catalog="">Back to the catalog <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"></use></svg></a></p>
+  </div>
+</dialog>
+
+<template id="demo-product-card">
+  <article class="product-card">
+    <a class="product-card__photo" href="#catalog" data-demo-product=""><img alt="" loading="lazy" decoding="async"></a>
+    <span class="product-card__badge" hidden></span>
+    <button class="wishlist-toggle" type="button" aria-pressed="false" data-favorite=""><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-heart"></use></svg></button>
+    <div class="product-card__meta">
+      <div>
+        <a class="product-card__title" href="#catalog" data-demo-product=""></a>
+        <span class="product-card__price"></span>
+      </div>
+      <div class="product-card__actions">
+        <button type="button" class="product-add" data-add=""><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bag"></use></svg></button>
+      </div>
+    </div>
+  </article>
+</template>
+<script type="application/json" id="demo-products">
+[
+  {
+    "id": "echo",
+    "sku": "VASELLA-DEMO-01",
+    "title": "Echo Vase",
+    "price": 12900,
+    "image": "product-echo.webp",
+    "badge": "Bestseller",
+    "tone": "olive",
+    "material": "Matte ceramic",
+    "height": 24,
+    "categories": [
+      "keramika",
+      "skulpturnye"
+    ],
+    "featured": true,
+    "description": "A sculptural vase in pale ceramic. The cutout highlights its geometric silhouette. Style it with dried branches or arrangements."
+  },
+  {
+    "id": "terra",
+    "sku": "VASELLA-DEMO-02",
+    "title": "Terra Vase",
+    "price": 8900,
+    "image": "product-terra.webp",
+    "badge": "",
+    "tone": "olive",
+    "material": "Terracotta",
+    "height": 28,
+    "categories": [
+      "keramika",
+      "fakturnye"
+    ],
+    "featured": true,
+    "description": "Vertical ridges in a warm terracotta shade. The narrow neck frames a single statement stem."
+  },
+  {
+    "id": "oliva",
+    "sku": "VASELLA-DEMO-03",
+    "title": "Olive Vase",
+    "price": 11500,
+    "image": "product-oliva.webp",
+    "badge": "New",
+    "tone": "olive",
+    "material": "Colored glass",
+    "height": 26,
+    "categories": [
+      "tsvetnoe-steklo",
+      "minimalizm"
+    ],
+    "featured": true,
+    "description": "Two rounded forms in translucent olive glass. In sunlight, the vase casts a tinted shadow."
+  },
+  {
+    "id": "volna",
+    "sku": "VASELLA-DEMO-04",
+    "title": "Wave Vase",
+    "price": 14900,
+    "image": "product-volna.webp",
+    "badge": "",
+    "tone": "olive",
+    "material": "Textured ceramic",
+    "height": 32,
+    "categories": [
+      "keramika",
+      "fakturnye",
+      "skulpturnye"
+    ],
+    "featured": true,
+    "description": "An asymmetrical vase with soft curves. Its matte, textured finish looks different in side light and diffuse light."
+  },
+  {
+    "id": "mramor",
+    "sku": "VASELLA-DEMO-05",
+    "title": "Marble Vase",
+    "price": 10900,
+    "image": "product-mramor.webp",
+    "badge": "Limited",
+    "tone": "clay",
+    "material": "Speckled ceramic",
+    "height": 21,
+    "categories": [
+      "keramika",
+      "minimalizm"
+    ],
+    "featured": true,
+    "description": "A rounded vase with a short neck and natural flecks. Its compact size fits a shelf or bedside table."
+  },
+  {
+    "id": "yantar",
+    "sku": "VASELLA-DEMO-06",
+    "title": "Amber Vase",
+    "price": 13900,
+    "image": "product-yantar.webp",
+    "badge": "New",
+    "tone": "olive",
+    "material": "Colored glass",
+    "height": 30,
+    "categories": [
+      "tsvetnoe-steklo",
+      "skulpturnye"
+    ],
+    "featured": false,
+    "description": "Warm amber glass with softly curved facets. The silhouette shifts with the viewing angle, and the wide neck holds a bouquet."
+  }
+]
+</script>
+<div class="status-toast" role="status" data-store-status hidden></div>
+</body>
+</html>
