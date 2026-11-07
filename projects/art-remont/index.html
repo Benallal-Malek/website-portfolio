@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ART REMONT | Turnkey Apartment Renovations</title>
+  <meta name="description" content="Premium turnkey apartment renovations in Moscow, from design and estimates to contracts, scheduling, and handover.">
+  <style>
+    :root {
+      --dark: #0e0e0e;
+      --dark-2: #151515;
+      --dark-3: #1b1a18;
+      --stone: #f3f0ea;
+      --stone-2: #ece8e1;
+      --stone-3: #ded8cd;
+      --accent: #c99668;
+      --accent-2: #d7b084;
+      --accent-3: #b98255;
+      --text: #ffffff;
+      --text-soft: #e8e3db;
+      --ink: #111111;
+      --ink-2: #2b2926;
+      --muted: #8e877e;
+      --muted-2: #a69e95;
+      --line-dark: rgba(255, 255, 255, 0.16);
+      --line-light: rgba(17, 17, 17, 0.14);
+      --container: 1220px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background: var(--stone);
+      font-family: Inter, Manrope, Montserrat, "Segoe UI", Arial, sans-serif;
+      line-height: 1.5;
+      text-rendering: geometricPrecision;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+      background: var(--stone);
+    }
+
+    .container {
+      width: min(calc(100% - 64px), var(--container));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      z-index: 50;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--text);
+      background: rgba(14, 14, 14, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      align-items: center;
+      min-height: 74px;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 39px;
+      height: 39px;
+      place-items: center;
+      border: 1px solid rgba(215, 176, 132, 0.78);
+      color: var(--accent-2);
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-name {
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      color: rgba(232, 227, 219, 0.7);
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      justify-self: center;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2vw, 36px);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-link,
+    .phone-link {
+      position: relative;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      transition: color 180ms var(--ease);
+    }
+
+    .nav-link::after {
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 220ms var(--ease);
+    }
+
+    .nav-link:hover,
+    .phone-link:hover {
+      color: #fff;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 1px solid transparent;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      transition:
+        background-color 180ms var(--ease),
+        border-color 180ms var(--ease),
+        color 180ms var(--ease),
+        transform 180ms var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      padding: 16px 28px;
+      color: #111;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-2);
+      border-color: var(--accent-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      padding: 16px 28px;
+      color: #fff;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-arrow {
+      gap: 16px;
+    }
+
+    .btn-arrow::after {
+      content: "→";
+      font-size: 17px;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      padding: 0;
+      color: #fff;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 1px;
+      margin: 0 auto;
+      background: currentColor;
+      transition:
+        transform 220ms var(--ease),
+        opacity 220ms var(--ease);
+    }
+
+    .menu-toggle span + span {
+      margin-top: 6px;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-panel {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 690px;
+      padding: 112px 0 70px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 72% 16%, rgba(201, 150, 104, 0.12), transparent 32%),
+        linear-gradient(180deg, var(--dark), var(--dark-2));
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.9;
+    }
+
+    .hero-bg::before,
+    .hero-bg::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-bg::before {
+      background: linear-gradient(90deg, #0e0e0e 0%, rgba(14, 14, 14, 0.66) 26%, rgba(14, 14, 14, 0.04) 62%);
+    }
+
+    .hero-bg::after {
+      background:
+        linear-gradient(180deg, rgba(14, 14, 14, 0.18), rgba(14, 14, 14, 0.48)),
+        linear-gradient(0deg, rgba(14, 14, 14, 0.64), transparent 38%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      min-height: 508px;
+      grid-template-columns: minmax(360px, 520px) 1fr;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .hero-copy {
+      align-self: center;
+      padding-top: 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 26px;
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.35px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(42px, 5.2vw, 72px);
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.03;
+      text-transform: uppercase;
+    }
+
+    .hero-title strong {
+      display: block;
+      font-weight: 800;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-lead {
+      max-width: 390px;
+      margin: 28px 0 0;
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      max-width: 490px;
+      margin-top: 54px;
+      color: var(--text-soft);
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      padding-right: 28px;
+    }
+
+    .metric + .metric {
+      padding-left: 28px;
+      border-left: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .metric-icon,
+    .benefit-icon,
+    .cta-feature-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: var(--accent-2);
+      border: 1px solid rgba(215, 176, 132, 0.58);
+      border-radius: 50%;
+    }
+
+    .metric svg,
+    .benefit svg,
+    .gift-card svg,
+    .cta-feature svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .metric-title,
+    .benefit-title,
+    .step-title,
+    .project-name,
+    .cta-feature-title {
+      display: block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.25px;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .metric-text,
+    .benefit-text,
+    .step-text,
+    .project-meta,
+    .cta-feature-text {
+      display: block;
+      margin-top: 4px;
+      color: rgba(232, 227, 219, 0.75);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .gift-card {
+      position: absolute;
+      right: 52px;
+      bottom: 30px;
+      z-index: 3;
+      display: grid;
+      max-width: 292px;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      padding: 24px;
+      color: #fff;
+      background: rgba(20, 20, 20, 0.86);
+      border: 1px solid rgba(215, 176, 132, 0.34);
+      backdrop-filter: blur(12px);
+    }
+
+    .gift-card svg {
+      width: 44px;
+      height: 44px;
+      color: var(--accent-2);
+      stroke-width: 1.25;
+    }
+
+    .gift-title {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .gift-text {
+      display: block;
+      margin-top: 8px;
+      color: rgba(232, 227, 219, 0.76);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-light {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.76), transparent 32%),
+        var(--stone);
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(25px, 2.4vw, 34px);
+      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1.22;
+      text-transform: uppercase;
+    }
+
+    .section-title .accent {
+      color: var(--accent-3);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: minmax(390px, 1fr) minmax(330px, 1.2fr) minmax(280px, 0.9fr);
+      align-items: center;
+      gap: 36px;
+    }
+
+    .philosophy-copy {
+      min-width: 0;
+    }
+
+    .section-title .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .philosophy-copy p {
+      max-width: 310px;
+      margin: 28px 0 0;
+      color: var(--ink-2);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .signature-note {
+      display: inline-grid;
+      grid-template-columns: auto 72px;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      margin-left: 300px;
+      color: var(--ink-2);
+      font-family: "Segoe Print", "Comic Sans MS", cursive;
+      font-size: 14px;
+      line-height: 1.1;
+      transform: rotate(-5deg);
+    }
+
+    .signature-note::after {
+      width: 72px;
+      height: 22px;
+      content: "";
+      border-bottom: 1px solid var(--ink-2);
+      border-right: 1px solid var(--ink-2);
+      transform: skewX(-34deg) rotate(-2deg);
+    }
+
+    .moodboard {
+      position: relative;
+    }
+
+    .moodboard img {
+      width: 100%;
+      aspect-ratio: 1.48;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.96) contrast(1.02);
+    }
+
+    .benefits {
+      display: grid;
+      gap: 27px;
+    }
+
+    .benefit {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 17px;
+      align-items: start;
+    }
+
+    .benefit-icon {
+      color: var(--ink-2);
+      border-color: rgba(43, 41, 38, 0.34);
+      border-radius: 0;
+    }
+
+    .benefit-title {
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    .benefit-text {
+      color: var(--ink-2);
+      font-size: 11px;
+    }
+
+    .process {
+      padding: 48px 0 54px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 42% -12%, rgba(201, 150, 104, 0.12), transparent 34%),
+        linear-gradient(180deg, #121212, #0f0f0f);
+    }
+
+    .process .section-title {
+      color: #fff;
+      margin-bottom: 36px;
+    }
+
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .step-image {
+      position: relative;
+      height: 145px;
+      margin-bottom: 26px;
+      overflow: hidden;
+    }
+
+    .step-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      mix-blend-mode: screen;
+      opacity: 0.82;
+      filter: saturate(0.86) contrast(1.08);
+    }
+
+    .step-title {
+      width: min(100%, 170px);
+      margin: 0 auto;
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .step-text {
+      width: min(100%, 170px);
+      max-width: 150px;
+      margin: 10px auto 0;
+      color: rgba(232, 227, 219, 0.72);
+      font-size: 10px;
+    }
+
+    .portfolio {
+      background: var(--stone);
+      padding-bottom: 66px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .portfolio-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: var(--ink-2);
+      background: transparent;
+      border: 1px solid rgba(43, 41, 38, 0.2);
+      cursor: pointer;
+      transition:
+        border-color 180ms var(--ease),
+        background-color 180ms var(--ease),
+        transform 180ms var(--ease);
+    }
+
+    .icon-btn:hover {
+      background: rgba(17, 17, 17, 0.04);
+      border-color: rgba(43, 41, 38, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .portfolio-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 196px;
+      overflow: hidden;
+      color: #fff;
+      background: #111;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 196px;
+      object-fit: cover;
+      transition: transform 700ms var(--ease);
+    }
+
+    .project-card::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.18) 52%, rgba(0, 0, 0, 0.42) 100%);
+    }
+
+    .project-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .project-info {
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 70px 22px 14px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.74) 44%, rgba(0, 0, 0, 0.98) 100%);
+    }
+
+    .project-name {
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .project-meta {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 11px;
+    }
+
+    .cta-section {
+      position: relative;
+      color: #fff;
+      background: #111;
+    }
+
+    .cta-section::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(14, 14, 14, 0.98) 0%, rgba(14, 14, 14, 0.9) 38%, rgba(243, 240, 234, 0.18) 59%, rgba(243, 240, 234, 0) 100%),
+        url("assets/call.webp") center / cover no-repeat;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      min-height: 344px;
+      grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 0.74fr);
+      align-items: center;
+      gap: 42px;
+      padding: 58px 0;
+    }
+
+    .cta-copy .section-title {
+      max-width: 460px;
+      color: #fff;
+    }
+
+    .cta-copy p {
+      max-width: 390px;
+      margin: 24px 0 0;
+      color: rgba(232, 227, 219, 0.84);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .cta-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 540px;
+      margin-top: 32px;
+    }
+
+    .cta-feature {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .cta-feature-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--accent-2);
+      border-radius: 0;
+    }
+
+    .cta-feature svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .cta-feature-title {
+      color: #fff;
+      font-size: 10px;
+    }
+
+    .cta-feature-text {
+      color: rgba(232, 227, 219, 0.72);
+      font-size: 9px;
+    }
+
+    .lead-form {
+      width: 100%;
+      max-width: 430px;
+      justify-self: start;
+      margin-left: -118px;
+      padding: 0;
+    }
+
+    .field {
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      height: 45px;
+      padding: 0 18px;
+      color: var(--ink);
+      background: rgba(243, 240, 234, 0.93);
+      border: 1px solid rgba(17, 17, 17, 0.14);
+      border-radius: 0;
+      outline: none;
+      font-size: 12px;
+      transition:
+        border-color 160ms var(--ease),
+        background-color 160ms var(--ease);
+    }
+
+    .field select {
+      appearance: none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #5f5951 50%),
+        linear-gradient(135deg, #5f5951 50%, transparent 50%);
+      background-position:
+        calc(100% - 20px) 20px,
+        calc(100% - 15px) 20px;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+      color: var(--muted);
+    }
+
+    .field input::placeholder {
+      color: var(--muted);
+    }
+
+    .field input:focus,
+    .field select:focus {
+      background: #fff;
+      border-color: var(--accent);
+    }
+
+    .field.error input,
+    .field.error select {
+      border-color: #a9543c;
+    }
+
+    .form-submit {
+      width: 100%;
+      height: 47px;
+      margin-top: 6px;
+    }
+
+    .privacy {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      margin: 14px 0 0;
+      color: rgba(232, 227, 219, 0.74);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .privacy svg {
+      flex: 0 0 auto;
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: var(--accent-2);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .form-message {
+      min-height: 18px;
+      margin-top: 12px;
+      color: var(--accent-2);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 1120px) {
+      .container {
+        width: min(calc(100% - 44px), var(--container));
+      }
+
+      .header-inner {
+        grid-template-columns: 205px 1fr auto;
+      }
+
+      .nav-list {
+        gap: 18px;
+      }
+
+      .header-actions {
+        gap: 14px;
+      }
+
+      .phone-link {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero-bg {
+        width: 78vw;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 0.9fr 1.2fr;
+        gap: 34px;
+      }
+
+      .benefits {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .benefit {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        gap: 14px;
+      }
+
+      .step-image {
+        height: 122px;
+      }
+
+      .cta-inner {
+        gap: 38px;
+        grid-template-columns: 0.85fr 1fr;
+      }
+
+      .cta-features {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-form {
+        max-width: 430px;
+        margin-left: -48px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .site-header {
+        background: rgba(14, 14, 14, 0.84);
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 68px;
+        justify-content: space-between;
+      }
+
+      .nav,
+      .header-actions {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-panel {
+        position: fixed;
+        z-index: 45;
+        top: 68px;
+        right: 0;
+        left: 0;
+        display: block;
+        padding: 28px 22px 32px;
+        color: #fff;
+        background: rgba(14, 14, 14, 0.97);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        transform: translateY(-120%);
+        transition: transform 280ms var(--ease);
+        backdrop-filter: blur(18px);
+      }
+
+      .mobile-panel.is-open {
+        transform: translateY(0);
+      }
+
+      .mobile-panel .nav-list {
+        display: grid;
+        gap: 18px;
+      }
+
+      .mobile-panel .nav-link {
+        font-size: 14px;
+      }
+
+      .mobile-actions {
+        display: grid;
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .mobile-actions .phone-link {
+        display: inline-block;
+        color: #fff;
+        font-size: 13px;
+      }
+
+      .mobile-actions .btn {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 92px 0 42px;
+      }
+
+      .hero-bg {
+        top: 68px;
+        bottom: auto;
+        width: 100%;
+        height: 420px;
+        opacity: 0.72;
+      }
+
+      .hero-bg img {
+        object-position: center;
+      }
+
+      .hero-bg::before {
+        background: linear-gradient(180deg, rgba(14, 14, 14, 0.24), #0e0e0e 88%);
+      }
+
+      .hero-bg::after {
+        background: linear-gradient(90deg, rgba(14, 14, 14, 0.5), rgba(14, 14, 14, 0.16));
+      }
+
+      .hero-inner {
+        display: block;
+        min-height: 0;
+      }
+
+      .hero-copy {
+        max-width: 620px;
+        padding-top: 130px;
+      }
+
+      .hero-lead {
+        max-width: 510px;
+      }
+
+      .gift-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        max-width: none;
+        margin-top: 34px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title .title-line {
+        white-space: normal;
+      }
+
+      .philosophy-copy p {
+        max-width: 540px;
+      }
+
+      .moodboard {
+        max-width: 640px;
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process {
+        padding: 44px 0;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 22px;
+      }
+
+      .step-image {
+        height: 142px;
+      }
+
+      .step-text {
+        max-width: 230px;
+      }
+
+      .portfolio-track {
+        display: flex;
+        gap: 14px;
+        margin-right: calc((100vw - 100%) / -2);
+        padding-right: 22px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .portfolio-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .project-card {
+        flex: 0 0 min(76vw, 330px);
+        scroll-snap-align: start;
+      }
+
+      .cta-section::before {
+        background:
+          linear-gradient(180deg, rgba(14, 14, 14, 0.98), rgba(14, 14, 14, 0.88) 58%, rgba(14, 14, 14, 0.66)),
+          url("assets/call.webp") left center / cover no-repeat;
+      }
+
+      .cta-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 48px 0;
+      }
+
+      .lead-form {
+        max-width: none;
+        justify-self: stretch;
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand-subtitle {
+        white-space: normal;
+      }
+
+      .hero {
+        padding-bottom: 34px;
+      }
+
+      .hero-copy {
+        padding-top: 96px;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+        font-size: 10px;
+      }
+
+      .hero-title {
+        font-size: clamp(36px, 11vw, 46px);
+      }
+
+      .hero-lead {
+        font-size: 14px;
+      }
+
+      .hero-ctas {
+        display: grid;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 48px;
+      }
+
+      .hero-metrics {
+        display: grid;
+        gap: 16px;
+        margin-top: 34px;
+      }
+
+      .metric,
+      .metric + .metric {
+        padding: 0;
+        border-left: 0;
+      }
+
+      .gift-card {
+        grid-template-columns: 46px 1fr;
+        gap: 16px;
+        padding: 18px;
+      }
+
+      .gift-card svg {
+        width: 36px;
+        height: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .signature-note {
+        grid-template-columns: auto;
+        gap: 8px;
+        font-size: 13px;
+        margin-left: 0;
+      }
+
+      .signature-note::after {
+        width: 54px;
+      }
+
+      .benefits,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        grid-template-columns: 42px 1fr;
+      }
+
+      .step-image {
+        height: 132px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .portfolio-controls {
+        align-self: flex-end;
+      }
+
+      .project-card {
+        flex-basis: 84vw;
+      }
+
+      .cta-features {
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="#top" aria-label="ART REMONT">
+          <span class="brand-mark">L</span>
+          <span class="brand-text">
+            <span class="brand-name">ART REMONT</span>
+            <span class="brand-subtitle">Turnkey apartment renovations</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#services">Services</a></li>
+            <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li><a class="nav-link" href="#process">Our Process</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#contacts">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a class="phone-link" href="tel:+79991234567">+7 (999) 123-45-67</a>
+          <a class="btn btn-primary" href="#contacts">Request a Quote</a>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-panel" id="mobile-menu" aria-hidden="true">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link" href="#process">Our Process</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#contacts">Contact</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <a class="phone-link" href="tel:+79991234567">+7 (999) 123-45-67</a>
+        <a class="btn btn-primary" href="#contacts">Request a Quote</a>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="assets/hero.webp" alt="">
+        </div>
+
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Turnkey apartment renovations in Moscow</p>
+            <h1 class="hero-title" id="hero-title">
+              <strong>A home</strong>
+              <span>you'll love</span>
+              <span>coming back to</span>
+            </h1>
+            <p class="hero-lead">We create stylish, functional spaces for everyday living.</p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary btn-arrow" href="#contacts">Get a Quote</a>
+              <a class="btn btn-secondary" href="#portfolio">View Portfolio</a>
+            </div>
+
+            <div class="hero-metrics" aria-label="Benefits">
+              <div class="metric">
+                <span class="metric-icon" aria-hidden="true">
+                  <svg viewbox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 2.8 8.4 7 10 4.2-1.6 7-5.5 7-10V6l-7-3Z"></path><path d="m9.4 12 1.8 1.8 3.7-4"></path></svg>
+                </span>
+                <span>
+                  <span class="metric-title">3-year warranty</span>
+                  <span class="metric-text">on all work</span>
+                </span>
+              </div>
+              <div class="metric">
+                <span class="metric-icon" aria-hidden="true">
+                  <svg viewbox="0 0 24 24"><path d="M7 3v3"></path><path d="M17 3v3"></path><path d="M4 8h16"></path><path d="M5 5h14a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"></path><path d="m9 14 2 2 4-5"></path></svg>
+                </span>
+                <span>
+                  <span class="metric-title">On-time completion</span>
+                  <span class="metric-text">or your money back</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="gift-card" aria-label="Renovation package offer">
+            <svg viewbox="0 0 24 24" aria-hidden="true"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 7v14"></path><path d="M12 7H7.5A2.5 2.5 0 1 1 10 4.5c0 1.9 2 2.5 2 2.5Z"></path><path d="M12 7h4.5A2.5 2.5 0 1 0 14 4.5c0 1.9-2 2.5-2 2.5Z"></path></svg>
+            <span>
+              <span class="gift-title">Free interior design plan</span>
+              <span class="gift-text">with a turnkey renovation</span>
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-light" id="about" aria-labelledby="about-title">
+        <div class="container philosophy-grid">
+          <div class="philosophy-copy">
+            <h2 class="section-title" id="about-title">
+              <span class="title-line">We do more than</span>
+              <span class="title-line">renovate. We create</span>
+              <span class="title-line accent">spaces <br>for living</span>
+            </h2>
+            <p>We consider your lifestyle, habits, and preferences. Every detail is designed for comfort and convenience for years to come.</p>
+            <span class="signature-note">Attention to detail<br>in every project</span>
+          </div>
+
+          <div class="moodboard">
+            <img src="assets/about.webp" alt="Mood board with an apartment floor plan, materials, and interior references">
+          </div>
+
+          <div class="benefits" id="services">
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24"><path d="m4 20 8-16 8 16"></path><path d="M7 15h10"></path><path d="M9 11h6"></path></svg>
+              </span>
+              <div>
+                <h3 class="benefit-title">Thoughtful Design</h3>
+                <p class="benefit-text">Beauty, practicality, and comfort in every square metre.</p>
+              </div>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"></path><path d="M15 3v5h5"></path><path d="M9 13h5"></path><path d="M9 17h7"></path><path d="m8 8 1.4 1.4L12 6.8"></path></svg>
+              </span>
+              <div>
+                <h3 class="benefit-title">Transparent Estimates</h3>
+                <p class="benefit-text">Clear estimates with no hidden charges.</p>
+              </div>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24"><path d="M7 4h10v16H7z"></path><path d="M9 8h6"></path><path d="M9 12h6"></path><path d="M9 16h3"></path><path d="M4 8h3"></path><path d="M17 8h3"></path></svg>
+              </span>
+              <div>
+                <h3 class="benefit-title">Quality Materials</h3>
+                <p class="benefit-text">We work only with trusted suppliers.</p>
+              </div>
+            </article>
+            <article class="benefit">
+              <span class="benefit-icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path></svg>
+              </span>
+              <div>
+                <h3 class="benefit-title">Project Oversight</h3>
+                <p class="benefit-text">We oversee every stage and stand behind our work.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="container">
+          <h2 class="section-title" id="process-title">How We Work</h2>
+          <div class="process-grid">
+            <article class="step">
+              <div class="step-image"><img src="assets/1.webp" alt=""></div>
+              <h3 class="step-title">Initial Inquiry</h3>
+              <p class="step-text">Submit an inquiry online or give us a call.</p>
+            </article>
+            <article class="step">
+              <div class="step-image"><img src="assets/2.webp" alt=""></div>
+              <h3 class="step-title">Site Visit and Measurements</h3>
+              <p class="step-text">We visit the property, discuss your plans, and take measurements.</p>
+            </article>
+            <article class="step">
+              <div class="step-image"><img src="assets/3.webp" alt=""></div>
+              <h3 class="step-title">Estimate and Contract</h3>
+              <p class="step-text">We prepare an estimate and agree on the timeline in writing.</p>
+            </article>
+            <article class="step">
+              <div class="step-image"><img src="assets/4.webp" alt=""></div>
+              <h3 class="step-title">Renovation</h3>
+              <p class="step-text">We complete the work to the agreed standards.</p>
+            </article>
+            <article class="step">
+              <div class="step-image"><img src="assets/5.webp" alt=""></div>
+              <h3 class="step-title">Handover</h3>
+              <p class="step-text">Inspect the finished work and enjoy your new space.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section portfolio" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title" id="portfolio-title">Our Projects</h2>
+            <div class="portfolio-controls" aria-label="Portfolio controls">
+              <button class="icon-btn" type="button" data-scroll-projects="-1" aria-label="Previous project">
+                <svg viewbox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg>
+              </button>
+              <button class="icon-btn" type="button" data-scroll-projects="1" aria-label="Next project">
+                <svg viewbox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="portfolio-track" id="portfolio-track">
+            <article class="project-card">
+              <img src="assets/simbol.webp" alt="Living room at the Simvol residential complex">
+              <div class="project-info">
+                <h3 class="project-name">Simvol Residences</h3>
+                <p class="project-meta">95 m² / 4 months</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img src="assets/now.webp" alt="Open-plan kitchen and living area at Now Residences">
+              <div class="project-info">
+                <h3 class="project-name">Now Residences</h3>
+                <p class="project-meta">68 m² / 3 months</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img src="assets/heart-of-stalition.webp" alt="Bedroom at Heart of the Capital Residences">
+              <div class="project-info">
+                <h3 class="project-name">Heart of the Capital Residences</h3>
+                <p class="project-meta">120 m² / 5 months</p>
+              </div>
+            </article>
+            <article class="project-card">
+              <img src="assets/life-varchavskaya.webp" alt="Bathroom at Life Varshavskaya Residences">
+              <div class="project-info">
+                <h3 class="project-name">Life Varshavskaya Residences</h3>
+                <p class="project-meta">80 m² / 4 months</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contacts" aria-labelledby="cta-title">
+        <div class="container cta-inner">
+          <div class="cta-copy">
+            <h2 class="section-title" id="cta-title">Get a Quote for Your Renovation</h2>
+            <p>Send us an inquiry and receive a free estimate within 24 hours.</p>
+            <div class="cta-features">
+              <div class="cta-feature">
+                <span class="cta-feature-icon" aria-hidden="true">
+                  <svg viewbox="0 0 24 24"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h4"></path></svg>
+                </span>
+                <span>
+                  <span class="cta-feature-title">Free estimate</span>
+                </span>
+              </div>
+              <div class="cta-feature">
+                <span class="cta-feature-icon" aria-hidden="true">
+                  <svg viewbox="0 0 24 24"><path d="M12 7v5l3 2"></path><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"></path></svg>
+                </span>
+                <span>
+                  <span class="cta-feature-title">Reply within 24 hours</span>
+                </span>
+              </div>
+              <div class="cta-feature">
+                <span class="cta-feature-icon" aria-hidden="true">
+                  <svg viewbox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 2.8 8.4 7 10 4.2-1.6 7-5.5 7-10V6l-7-3Z"></path><path d="m9.5 12.2 1.7 1.7 3.8-4"></path></svg>
+                </span>
+                <span>
+                  <span class="cta-feature-title">Private and secure</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <form class="lead-form" id="lead-form" novalidate>
+            <div class="field">
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" aria-label="Your name" required>
+            </div>
+            <div class="field">
+              <input type="tel" name="phone" autocomplete="tel" placeholder="Phone" aria-label="Phone" required>
+            </div>
+            <div class="field">
+              <input type="number" name="area" inputmode="decimal" min="1" placeholder="Apartment area (m²)" aria-label="Apartment area">
+            </div>
+            <div class="field">
+              <select name="time" aria-label="When are you planning to renovate?">
+                <option value="">When are you planning to renovate?</option>
+                <option value="now">Within the next month</option>
+                <option value="quarter">Within the next three months</option>
+                <option value="later">I'm still choosing a contractor</option>
+              </select>
+            </div>
+            <button class="btn btn-primary form-submit" type="submit">Get My Estimate</button>
+            <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const body = document.body;
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mobilePanel = document.querySelector(".mobile-panel");
+    const mobileLinks = document.querySelectorAll(".mobile-panel a");
+    const portfolioTrack = document.querySelector("#portfolio-track");
+    const portfolioButtons = document.querySelectorAll("[data-scroll-projects]");
+    const leadForm = document.querySelector("#lead-form");
+    const formMessage = document.querySelector("#form-message");
+
+    function setMenu(open) {
+      menuToggle.setAttribute("aria-expanded", String(open));
+      mobilePanel.classList.toggle("is-open", open);
+      mobilePanel.setAttribute("aria-hidden", String(!open));
+      body.classList.toggle("menu-open", open);
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      setMenu(!isOpen);
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    portfolioButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = Number(button.dataset.scrollProjects);
+        const card = portfolioTrack.querySelector(".project-card");
+        const amount = card ? card.getBoundingClientRect().width + 16 : 320;
+        portfolioTrack.scrollBy({ left: direction * amount, behavior: "smooth" });
+      });
+    });
+
+    leadForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const fields = Array.from(leadForm.querySelectorAll(".field"));
+      fields.forEach((field) => field.classList.remove("error"));
+
+      const name = leadForm.elements.name;
+      const phone = leadForm.elements.phone;
+      let hasError = false;
+
+      if (!name.value.trim()) {
+        name.closest(".field").classList.add("error");
+        hasError = true;
+      }
+
+      const digits = phone.value.replace(/\D/g, "");
+      if (digits.length < 10) {
+        phone.closest(".field").classList.add("error");
+        hasError = true;
+      }
+
+      if (hasError) {
+        formMessage.textContent = "Please enter your name and a valid phone number.";
+        return;
+      }
+
+      formMessage.textContent = "Thanks for trying the estimate form.";
+      leadForm.reset();
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+      }
+    });
+  </script>
+</body>
+</html>

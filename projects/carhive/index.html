@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarHive | Professional Auto Repair and Maintenance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --primary: #E31C25;
+            --primary-hover: #C1131A;
+            --dark-bg: #0A0A0B;
+            --dark-card: #111113;
+            --light-bg: #F6F6F9;
+            --text-dark: #111111;
+            --text-muted: #7A7E8A;
+            --text-light: #FFFFFF;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .badge-red {
+            background-color: rgba(227, 28, 37, 0.1);
+            color: var(--primary);
+            padding: 6px 12px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        
+        .top-bar {
+            background-color: #0F0F11;
+            color: var(--text-light);
+            font-size: 13px;
+            padding: 10px 0;
+            border-bottom: 1px solid #222226;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .top-bar-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .top-bar-info i {
+            color: var(--primary);
+        }
+
+        .top-bar-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-bar-socials a:hover {
+            color: var(--primary);
+        }
+
+        
+        .navbar {
+            background-color: var(--text-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 26px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a:hover, .nav-links .active {
+            color: var(--primary);
+        }
+
+        
+        .hero {
+            background: linear-gradient(rgba(10, 10, 11, 0.88), rgba(10, 10, 11, 0.92)), url('assets/hero.webp') no-repeat center center/cover;
+            padding: 100px 0 220px 0;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 15;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 35px;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .phone-callout {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .phone-callout .icon-box {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .phone-callout .details span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .phone-callout .details a {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        
+        .hero-widgets {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .widget-founder {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-self: flex-end;
+            width: 240px;
+        }
+
+        .founder-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .founder-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #444;
+        }
+
+        .founder-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .founder-info span {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .widget-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            max-width: 280px;
+            align-self: flex-end;
+            text-align: right;
+            border-right: 2px solid var(--primary);
+            padding-right: 15px;
+        }
+
+        .widget-customers {
+            background: var(--text-light);
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 12px;
+            width: 280px;
+            align-self: flex-end;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .widget-customers h4 {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .customer-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .avatar-pile {
+            display: flex;
+        }
+
+        .avatar-pile img, .avatar-placeholder {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--text-light);
+            margin-right: -8px;
+            object-fit: cover;
+            background: #ccc;
+        }
+
+        .avatar-placeholder {
+            background: var(--primary);
+            color: var(--text-light);
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0;
+        }
+
+        .customer-stars .stars {
+            color: #FFB800;
+            font-size: 12px;
+        }
+
+        .customer-stars span {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: block;
+        }
+
+        
+        .hero-car-wrapper {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 680px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        
+        .about {
+            padding: 160px 0 100px 0;
+            background-color: var(--text-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            margin-bottom: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        .about-meta {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            border-top: 1px solid #EEF0F4;
+            padding-top: 30px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .meta-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #eaeaea;
+        }
+
+        .author-info h5 {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .author-info span {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .meta-cert {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .meta-cert i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .meta-cert span {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        
+        .about-image-block {
+            position: relative;
+        }
+
+        .main-about-img {
+            border-radius: 16px;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        
+        .experience-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background-color: var(--text-light);
+            padding: 25px 35px;
+            border-top-left-radius: 24px;
+            text-align: center;
+            box-shadow: -10px -10px 30px rgba(0,0,0,0.02);
+        }
+
+        .experience-badge::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            right: 2px;
+            width: 24px;
+            height: 24px;
+            border-bottom-right-radius: 24px;
+            box-shadow: 12px 12px 0 0 var(--text-light);
+        }
+
+        .experience-badge::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: -24px;
+            width: 24px;
+            height: 24px;
+            border-bottom-right-radius: 24px;
+            box-shadow: 12px 12px 0 0 var(--text-light);
+        }
+
+        .experience-badge h3 {
+            font-family: var(--font-heading);
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .experience-badge span {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+            display: block;
+            margin-top: 5px;
+        }
+
+        
+        .brands {
+            padding: 40px 0;
+            background-color: var(--text-light);
+            border-top: 1px solid #EEF0F4;
+            border-bottom: 1px solid #EEF0F4;
+        }
+
+        .brands-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .brands-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .brand-logos {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .brand-logos span {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 18px;
+            color: #BAC0D1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        
+        .services {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 100px 0;
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 60px;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .services-header-left h2 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-top: 10px;
+            max-width: 500px;
+        }
+
+        .services-header-right {
+            max-width: 480px;
+        }
+
+        .services-header-right p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--dark-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(227, 28, 37, 0.2);
+        }
+
+        .card-body {
+            padding: 30px;
+            position: relative;
+        }
+
+        .card-body h3 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .card-btn {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .card-btn {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transform: scale(1.12);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .card-image-wrapper img {
+            transform: scale(1.20);
+        }
+
+        
+        .card-logo-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background-color: var(--dark-bg);
+            padding: 15px 20px;
+            border-top-left-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 5;
+        }
+
+        .card-logo-badge::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 10px 10px 0 0 var(--dark-bg);
+        }
+
+        .card-logo-badge::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: -20px;
+            width: 20px;
+            height: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 10px 10px 0 0 var(--dark-bg);
+        }
+
+        .badge-icon-box {
+            color: var(--primary);
+            font-size: 18px;
+        }
+
+        .badge-text-box h5 {
+            font-family: var(--font-heading);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .badge-text-box span {
+            font-size: 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            display: block;
+        }
+
+        
+        .stats {
+            background-color: var(--text-light);
+            padding: 60px 0;
+            border-top: 1px solid #EEF0F4;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60px;
+            background-color: #E2E5ED;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            max-width: 240px;
+            margin: 0 auto;
+        }
+
+        
+        @media (max-width: 1024px) {
+            .hero-content h1 { font-size: 46px; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .nav-links { display: none; } 
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-widgets { display: none; }
+            .hero-car-wrapper { position: relative; bottom: 0; transform: none; left: 0; margin: 40px auto 0 auto; max-width: 100%; }
+            .about { padding-top: 60px; }
+            .about-content h2, .services-header-left h2 { font-size: 32px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .services-header { flex-direction: column; align-items: flex-start; }
+            .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+            .stat-item:not(:last-child)::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><i class="fa-solid fa-phone"></i> +7 945 678 90 60</span>
+                <span><i class="fa-solid fa-envelope"></i> domain@example.com</span>
+                <span><i class="fa-solid fa-clock"></i> Mon–Fri, 9:00 AM–7:00 PM</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                CAR<span>HIVE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+                <li><a href="#">Pages <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+                <li><a href="#">Projects <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+                <li><a href="#">Blog <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="btn btn-primary">Book Now <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Trusted experts<br>in <span>auto repair</span></h1>
+                    <p>CarHive provides comprehensive maintenance and computer diagnostics for all vehicle makes. We use advanced equipment and original parts, and provide a warranty on all our work.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary">Book a Service <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></button>
+                        <div class="phone-callout">
+                            <div class="icon-box"><i class="fa-solid fa-phone-flip"></i></div>
+                            <div class="details">
+                                <span>Need help?</span>
+                                <a href="tel:+79456789060">+7 945 678 90 60</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-widgets">
+                    <div class="widget-founder">
+                        <div class="founder-profile">
+                            <img src="assets/user-2.webp" alt="Sk Samlul" class="founder-avatar">
+                            <div class="founder-info">
+                                <h4>Sk Samlul</h4>
+                                <span>Co-founder</span>
+                            </div>
+                        </div>
+                        <a href="#" class="arrow-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <p class="widget-text">Every customer gets personal service, fair prices, and a fixed estimate.</p>
+                    <div class="widget-customers">
+                        <h4>Satisfied Customers</h4>
+                        <div class="customer-meta">
+                            <div class="avatar-pile">
+                                <img src="assets/user-1.webp" alt="Customer">
+                                <img src="assets/user-2.webp" alt="Customer">
+                                <img src="assets/user-3.webp" alt="Customer">
+                                <div class="avatar-placeholder">1k+</div>
+                            </div>
+                            <div class="customer-stars">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <span>1,264+ reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-car-wrapper">
+            <img src="assets/1.webp" alt="Premium red car">
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="badge-red">About</span>
+                    <h2>Driven by passion,<br>guided by precision</h2>
+                    
+                    <div class="about-features">
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Fuel system repair</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Fuel system repair</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Air conditioning recharge</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Air conditioning recharge</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Wheel alignment</div>
+                        <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Wheel alignment</div>
+                    </div>
+                    
+                    <p class="about-text">For more than 20 years, CarHive has helped keep vehicles in excellent condition. Our certified mechanics train regularly with leading manufacturers, follow factory procedures, and stand behind the quality of every service.</p>
+                    
+                    <div class="about-meta">
+                        <div class="meta-author">
+                            <img src="assets/user-1.webp" alt="Brooklyn Simmons" class="author-img">
+                            <div class="author-info">
+                                <h5>Brooklyn Simmons</h5>
+                                <span>Co-founder</span>
+                            </div>
+                        </div>
+                        <div class="meta-cert">
+                            <i class="fa-solid fa-award"></i>
+                            <span>ISO Certification<br>Quality guarantee</span>
+                        </div>
+                    </div>
+                    
+                    <div class="about-actions">
+                        <button class="btn btn-primary">About Our Team <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></button>
+                        <div class="phone-callout">
+                            <div class="icon-box"><i class="fa-solid fa-phone-flip"></i></div>
+                            <div class="details">
+                                <span>Need help?</span>
+                                <a href="tel:+79456789060">+7 945 678 90 60</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image-block">
+                    <img src="assets/2.webp" alt="Mechanic inspecting a car engine bay" class="main-about-img">
+                    <div class="experience-badge">
+                        <h3>20+</h3>
+                        <span>Years in Business</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands">
+        <div class="container">
+            <div class="brands-wrapper">
+                <div class="brands-title">Your trusted partner:</div>
+                <div class="brand-logos">
+                    <span><i class="fa-solid fa-cubes"></i> Logoipsum</span>
+                    <span><i class="fa-solid fa-layer-group"></i> logo ipsum</span>
+                    <span><i class="fa-solid fa-circle-nodes"></i> Logoipsum</span>
+                    <span><i class="fa-solid fa-compass-drafting"></i> LOGOIPSUM</span>
+                    <span><i class="fa-solid fa-square-poll-horizontal"></i> logoipsum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-header">
+                <div class="services-header-left">
+                    <span class="badge-red">Our Services</span>
+                    <h2>Expert Car Care, from Detailing to Repairs</h2>
+                </div>
+                <div class="services-header-right">
+                    <p>We offer complete car care, scheduled maintenance, and major restorations using high-quality materials.</p>
+                    <button class="btn btn-primary">View All Services <i class="fa-solid fa-arrow-right" style="margin-left:8px;"></i></button>
+                </div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-body">
+                        <h3>Exterior Detailing</h3>
+                        <p>Premium care includes gentle polishing, ceramic coating, interior deep cleaning, and bodywork protection with certified products.</p>
+                        <a href="#" class="card-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <img src="assets/4.webp" alt="Exterior detailing">
+                        <div class="card-logo-badge">
+                            <div class="badge-icon-box"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                            <div class="badge-text-box">
+                                <h5>Premium Care</h5>
+                                <span>Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <h3>Mechanical Repairs</h3>
+                        <p>Computer diagnostics and repairs for suspension, brakes, transmissions, and engines of any complexity.</p>
+                        <a href="#" class="card-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <img src="assets/5.webp" alt="Mechanical repairs">
+                        <div class="card-logo-badge">
+                            <div class="badge-icon-box"><i class="fa-solid fa-gears"></i></div>
+                            <div class="badge-text-box">
+                                <h5>Any Level of Complexity</h5>
+                                <span>Maintenance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="card-body">
+                        <h3>Interior Restoration</h3>
+                        <p>Spot repairs, blemish removal, and complete reupholstery with original leather and Alcantara.</p>
+                        <a href="#" class="card-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <img src="assets/6.webp" alt="Interior repairs">
+                        <div class="card-logo-badge">
+                            <div class="badge-icon-box"><i class="fa-solid fa-wrench"></i></div>
+                            <div class="badge-text-box">
+                                <h5>Restoration</h5>
+                                <span>Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2.5K+</div>
+                    <div class="stat-label">Jobs Completed</div>
+                    <div class="stat-desc">Vehicles repaired or fully restored over the past several years.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">46K+</div>
+                    <div class="stat-label">Satisfied Customers</div>
+                    <div class="stat-desc">Customers who choose our service centre for regular maintenance.</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Completed on Time</div>
+                    <div class="stat-desc">Carefully planned processes help us meet the repair deadlines agreed in advance.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '12px 0';
+                navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.padding = '20px 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.03)';
+            }
+        });
+    </script>
+</body>
+</html>

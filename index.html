@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eight website demos built with HTML, CSS, and JavaScript by Benallal Malek.">
+  <title>Website Portfolio | Benallal Malek</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0e111b;
+      --card: #171d2d;
+      --border: #35405a;
+      --text: #f4f6ff;
+      --muted: #bbc5db;
+      --accent: #a7e6ed;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 20% 0, #25213b 0, transparent 36rem), var(--background);
+      color: var(--text);
+      font: 1rem/1.55 system-ui, sans-serif;
+    }
+    .wrap { width: min(70rem, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding-block: clamp(2.5rem, 8vw, 5rem) 2.25rem; }
+    .byline, .category {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .byline { margin: 0 0 .45rem; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+    .intro { max-width: 42ch; margin-bottom: 1.25rem; color: var(--muted); }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+      gap: 1.25rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .grid a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--card);
+      color: inherit;
+      text-decoration: none;
+    }
+    .grid a:hover { border-color: var(--accent); }
+    .grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #101520;
+    }
+    .grid .contained { object-fit: contain; }
+    .card-copy { flex: 1; padding: 1rem 1.1rem 1.25rem; }
+    .card-copy h2 { margin: .15rem 0 .25rem; font-size: 1.25rem; }
+    .card-copy p { margin: 0; color: var(--muted); }
+    footer { padding-block: 2rem 3rem; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <p class="byline">Benallal Malek · Frontend developer</p>
+    <h1>Website Portfolio</h1>
+    <p class="intro">Eight English-language projects built with HTML, CSS, and JavaScript.</p>
+    <a href="https://github.com/Benallal-Malek/website-portfolio">Browse the source on GitHub</a>
+  </header>
+  <main class="wrap">
+    <ul class="grid" aria-label="Website demos">
+      <li><a href="projects/art-remont/">
+        <img src="projects/art-remont/assets/hero.webp" alt="">
+        <div class="card-copy">
+          <span class="category">Interior renovation</span>
+          <h2>Art Remont</h2>
+          <p>A renovation studio, project gallery, and estimate form.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/bloomfy/">
+        <img src="projects/bloomfy/assets/hero.webp" alt="">
+        <div class="card-copy">
+          <span class="category">Investment</span>
+          <h2>BloomFi</h2>
+          <p>A landing page for an investment and advisory firm.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/buildpro/">
+        <img src="projects/buildpro/assets/hero.webp" alt="">
+        <div class="card-copy">
+          <span class="category">Construction</span>
+          <h2>BuildPro</h2>
+          <p>Company services, recent work, and an inquiry form.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/carhive/">
+        <img src="projects/carhive/assets/1.webp" alt="" loading="lazy">
+        <div class="card-copy">
+          <span class="category">Auto services</span>
+          <h2>CarHive</h2>
+          <p>A detailing and repair site with animated service statistics.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/cars/">
+        <img src="projects/cars/assets/main-car.webp" alt="" loading="lazy" class="contained">
+        <div class="card-copy">
+          <span class="category">Car rental</span>
+          <h2>Cars</h2>
+          <p>A premium rental fleet with brand filters and a booking form.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/fite-lite/">
+        <img src="projects/fite-lite/assets/header.webp" alt="" loading="lazy" class="contained">
+        <div class="card-copy">
+          <span class="category">Fitness</span>
+          <h2>Fite Lite</h2>
+          <p>Training programs, studio services, and a testimonial carousel.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/head-phones/">
+        <img src="projects/head-phones/assets/hero.webp" alt="" loading="lazy">
+        <div class="card-copy">
+          <span class="category">E-commerce</span>
+          <h2>Shopkart</h2>
+          <p>A headphone catalog with search, filters, sorting, and favorites.</p>
+        </div>
+      </a></li>
+      <li><a href="projects/iner-balance/">
+        <img src="projects/iner-balance/assets/hero.webp" alt="" loading="lazy">
+        <div class="card-copy">
+          <span class="category">Therapy</span>
+          <h2>Inner Balance</h2>
+          <p>A therapist profile, service overview, and consultation form.</p>
+        </div>
+      </a></li>
+    </ul>
+  </main>
+  <footer class="wrap">Portfolio demos · Forms simulate submissions in the browser.</footer>
+</body>
+</html>

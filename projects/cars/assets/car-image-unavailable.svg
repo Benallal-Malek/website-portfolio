@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 330" role="img" aria-label="Vehicle photo unavailable">
+  <rect width="600" height="330" fill="#202020"/>
+  <path d="M174 174l14-36a20 20 0 0 1 19-13h129a20 20 0 0 1 18 11l19 38 27 7a17 17 0 0 1 13 17v20H163v-29a15 15 0 0 1 11-15Zm12-1h172m-147 45a21 21 0 1 1-42 0m224 0a21 21 0 1 1-42 0" fill="none" stroke="#a7a7a7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="300" y="274" fill="#ddd" font-family="system-ui, sans-serif" font-size="19" text-anchor="middle">Vehicle photo unavailable</text>
+</svg>
